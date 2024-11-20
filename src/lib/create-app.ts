@@ -1,4 +1,4 @@
-import type { AppBindings, AppOpenAPI } from './types'
+import type { AppBindings } from './types'
 import { logger } from '@/middlewares/logger'
 import { OpenAPIHono } from '@hono/zod-openapi'
 import { notFound, onError, serveEmojiFavicon } from 'stoker/middlewares'
@@ -17,4 +17,3 @@ export default function createApp() {
   app.onError(onError)
   return app
 }
-

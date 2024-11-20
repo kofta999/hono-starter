@@ -1,11 +1,21 @@
 {
-  "name": "hono-testing",
+  "name": "placeholder",
   "type": "module",
   "version": "1.0.0",
   "scripts": {
-    "dev": "tsx watch src/index.ts",
-    "lint": "eslint .",
+    "start": "node dist/server/index.js",
+    "dev": "tsx ./src/index.ts",
+    "dev:tsup": "tsup src/index.ts --watch",
+    "build": "tsup",
+    "clean": "rm -rf dist",
+    "typecheck": "tsc --noemit",
+    "lint": "eslint src/",
     "test": "LOG_LEVEL=silent vitest"
+  },
+  "exports": {
+    ".": {
+      "default": "./src/hc.ts"
+    }
   },
   "dependencies": {
     "@asteasolutions/zod-to-openapi": "^7.2.0",
@@ -30,6 +40,7 @@
     "drizzle-kit": "^0.27.1",
     "eslint": "^9.12.0",
     "eslint-plugin-format": "^0.1.2",
+    "tsup": "^8.3.5",
     "tsx": "^4.19.2",
     "vitest": "^2.1.5"
   }
